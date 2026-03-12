@@ -1,21 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HelpCenterScreen from "./screens/HelpCenterScreen";
-import ContactUsScreen from "./screens/ContactUsScreen";
+import HelpCenterApp from "./HelpCenterApp";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from "react-router-dom";
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HelpCenterScreen />} />
-        <Route path="/help" element={<HelpCenterScreen />} />
-        <Route path="/contact" element={<ContactUsScreen />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
 
 const root = createRoot(document.getElementById("root"));
-root.render(<StrictMode><App /></StrictMode>);
+root.render(<StrictMode>
+  <BrowserRouter basename= "/">
+  <HelpCenterApp />
+  </BrowserRouter>
+  </StrictMode>);

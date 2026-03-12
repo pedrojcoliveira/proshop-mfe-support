@@ -41,8 +41,8 @@ module.exports = {
       name: "mfeSupport",
       filename: "remoteEntry.js",
       exposes: {
-        "./HelpCenter": "./src/screens/HelpCenterScreen.jsx",
-        "./ContactUs": "./src/screens/ContactUsScreen.jsx",
+        //"./HelpCenter": "./src/screens/HelpCenterScreen.jsx",
+        "./HelpCenter": "./src/HelpCenterApp.jsx",
       },
       shared: {
         react: { singleton: true, requiredVersion: false },
