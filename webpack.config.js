@@ -3,7 +3,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
 module.exports = {
   entry: "./src/index.js",
-  devServer: { 
+  performance: { hints: false },
+  devServer: {
     port: 4202,
     historyApiFallback: true,
     headers: { "Access-Control-Allow-Origin": "*" },
@@ -41,8 +42,8 @@ module.exports = {
       name: "mfeSupport",
       filename: "remoteEntry.js",
       exposes: {
-        //"./HelpCenter": "./src/screens/HelpCenterScreen.jsx",
         "./HelpCenter": "./src/HelpCenterApp.jsx",
+        "./HelpCenterLink": "./src/components/HelpCenterLink.jsx",
       },
       shared: {
         react: { singleton: true, requiredVersion: false },
